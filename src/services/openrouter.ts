@@ -4,7 +4,7 @@ import { logger } from '../utils/logger.js';
 
 export class OpenRouterService {
   private readonly apiKey: string;
-  private readonly baseURL = 'https://openrouter.ai/api/v1';
+  private readonly baseURL = process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1';
   private readonly model: string;
 
   constructor(config: Config) {

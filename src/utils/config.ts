@@ -15,7 +15,7 @@ export function getConfig(): Config {
     openRouterApiKey,
     logLevel: process.env.LOG_LEVEL || 'info',
     maxImageSizeMB: parseInt(process.env.MAX_IMAGE_SIZE_MB || '10'),
-    geminiModel: 'google/gemini-2.0-flash-exp'
+    geminiModel: process.env.GEMINI_MODEL || 'google/gemini-2.0-flash-exp'
   };
 
   logger.debug('Configuration loaded:', {

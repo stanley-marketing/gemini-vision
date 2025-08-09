@@ -68,7 +68,20 @@ class GeminiVisionMCPServer {
       const { name, arguments: args } = request.params;
 
       if (name === 'analyze_image') {
-        return await this.handleImageAnalysis(args as ImageAnalysisRequest);
+        // Validate and narrow arguments at runtime before passing to handler
+        const parsed = (args as unknown) as Partial<ImageAnalysisRequest> | undefined;
+
+        if (
+          !parsed ||
+          typeof parsed.imagePath !== 'string' ||
+          typeof parsed.prompt !== 'string'
+        ) {
+          throw new Error(
+            'Invalid arguments for analyze_image: expected { imagePath: string, prompt: string }'
+          );
+        }
+
+        return await this.handleImageAnalysis(parsed as ImageAnalysisRequest);
       }
 
       throw new Error(`Unknown tool: ${name}`);
@@ -114,6 +127,8 @@ class GeminiVisionMCPServer {
               error: errorMessage,
               imagePath: request.imagePath,
               timestamp: new Date().toISOString(),
+              baseURL: process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1',
+              model: process.env.GEMINI_MODEL || 'google/gemini-2.0-flash-exp'
             }, null, 2),
           },
         ],
