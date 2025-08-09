@@ -132,7 +132,7 @@ The server returns responses in this format:
 ```json
 {
   "analysis": "Detailed analysis of the image...",
-  "model": "google/gemini-2.0-flash-exp",
+  "model": "google/gemini-2.5-pro",
   "timestamp": "2024-01-15T10:30:00.000Z"
 }
 ```

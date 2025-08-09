@@ -40,11 +40,11 @@ logging.basicConfig(
 logger = logging.getLogger("gemini-vision-mcp")
 
 # Supported image formats
-SUPPORTED_FORMATS = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
+SUPPORTED_FORMATS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif"}
 
 # OpenRouter API configuration
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-GEMINI_MODEL = "google/gemini-2.0-flash-exp"
+GEMINI_MODEL = "google/gemini-2.5-pro"
 
 class GeminiVisionServer:
     """MCP Server for Gemini Vision image analysis."""
@@ -129,7 +129,8 @@ class GeminiVisionServer:
             ".jpg": "image/jpeg",
             ".jpeg": "image/jpeg",
             ".gif": "image/gif",
-            ".webp": "image/webp"
+            ".webp": "image/webp",
+            ".avif": "image/avif"
         }
         return mime_types.get(extension, "image/jpeg")
     

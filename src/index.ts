@@ -101,7 +101,7 @@ class GeminiVisionMCPServer {
       
       const response: ImageAnalysisResponse = {
         analysis,
-        model: 'google/gemini-2.0-flash-exp',
+        model: 'google/gemini-2.5-pro',
         timestamp: new Date().toISOString(),
       };
 
@@ -128,7 +128,7 @@ class GeminiVisionMCPServer {
               imagePath: request.imagePath,
               timestamp: new Date().toISOString(),
               baseURL: process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1',
-              model: process.env.GEMINI_MODEL || 'google/gemini-2.0-flash-exp'
+              model: process.env.GEMINI_MODEL || 'google/gemini-2.5-pro'
             }, null, 2),
           },
         ],
