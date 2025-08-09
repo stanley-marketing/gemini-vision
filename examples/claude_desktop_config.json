@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gemini-vision": {
+      "command": "tsx",
+      "args": ["/path/to/gemini-vision-mcp-server/src/index.ts"],
+      "env": {
+        "OPENROUTER_API_KEY": "your_openrouter_api_key_here"
+      }
+    }
+  }
+}
