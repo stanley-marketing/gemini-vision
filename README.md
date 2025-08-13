@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server that enables AI assistants like Claude and OpenCode to analyze images using Google's Gemini 2.5 Pro model through the OpenRouter API.
 
+## About
+
+General-purpose developer tool for image analysis through AI. **No customer data, proprietary prompts, or core product logic.**
+
 ## Features
 
 - **Image Analysis**: Analyze images with detailed visual descriptions, object detection, and text extraction
@@ -33,6 +37,10 @@ A Model Context Protocol (MCP) server that enables AI assistants like Claude and
    ```env
    OPENROUTER_API_KEY=your_actual_api_key_here
    ```
+
+## Configure
+
+Create `.env` from `.env.example`. Do not commit secrets.
 
 5. Build the project:
    ```bash
@@ -214,9 +222,13 @@ Enable debug logging to see detailed information:
 LOG_LEVEL=debug npm run dev
 ```
 
+## Safety & Privacy
+
+Do not upload PII or confidential data. See SECURITY.md.
+
 ## License
 
-MIT License - see LICENSE file for details.
+MIT. See LICENSE and NOTICE.
 
 ## Contributing
 

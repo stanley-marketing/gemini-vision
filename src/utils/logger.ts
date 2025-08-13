@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 export enum LogLevel {
   DEBUG = 0,
   INFO = 1,

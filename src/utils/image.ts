@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { promises as fs } from 'fs';
 import { logger } from './logger.js';
 

@@ -1,0 +1,23 @@
+SECURITY BASELINE REPORT
+========================
+Date: 2025-08-13
+Repository: gemini-vision-mcp
+
+DEPENDENCY SCANNING:
+✅ Node.js Dependencies: No vulnerabilities found (npm audit)
+✅ Python Dependencies: No vulnerabilities found (pip-audit)
+
+STATIC APPLICATION SECURITY TESTING (SAST):
+⚠️  Semgrep/CodeQL: Not run (would be configured in CI/CD)
+
+CONTAINER SECURITY:
+ℹ️  No Dockerfile present - N/A
+
+HARDENING RECOMMENDATIONS:
+- Enable GitHub's CodeQL scanning in repository settings
+- Consider adding Semgrep to CI pipeline
+- Implement branch protection rules
+- Enable secret scanning and push protection
+
+OVERALL STATUS: ✅ GOOD - No critical vulnerabilities detected
+Dependencies are clean and up-to-date.

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { config as dotenvConfig } from 'dotenv';
 import { Config } from '../types/index.js';
 import { logger } from './logger.js';

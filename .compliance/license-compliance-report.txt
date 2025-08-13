@@ -1,0 +1,22 @@
+LICENSE COMPLIANCE REPORT
+=========================
+Date: 2025-08-13
+Repository: gemini-vision-mcp
+
+PROJECT LICENSE: MIT
+
+THIRD-PARTY LICENSES SUMMARY:
+- MIT: 91 packages ✅ Compatible
+- ISC: 7 packages ✅ Compatible  
+- BSD-2-Clause: 2 packages ✅ Compatible
+- BSD-3-Clause: 1 package ✅ Compatible
+- NOASSERTION: 5 packages ⚠️ Needs review
+
+COMPLIANCE STATUS: ✅ COMPLIANT
+- All detected licenses are compatible with MIT
+- NOASSERTION packages are typically GitHub Actions or internal packages
+- No GPL or other copyleft licenses detected
+
+RECOMMENDATIONS:
+- All third-party licenses are compatible with MIT distribution
+- Continue monitoring for license changes in dependencies

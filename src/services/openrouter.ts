@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import axios, { AxiosResponse } from 'axios';
 import { OpenRouterRequest, OpenRouterResponse, Config } from '../types/index.js';
 import { logger } from '../utils/logger.js';

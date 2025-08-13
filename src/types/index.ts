@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 export interface ImageAnalysisRequest {
   imagePath: string;
   prompt: string;

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Tests for the Gemini Vision MCP Server."""
 
 import asyncio

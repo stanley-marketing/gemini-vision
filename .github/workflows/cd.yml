@@ -1,19 +1,22 @@
-name: Publish to PyPI
+name: Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags: [ 'v*.*.*' ]
 
 jobs:
-  build-and-publish:
+  build-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-
+      contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with: 
+          output-file: 'SBOM.spdx.json'
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -27,6 +30,14 @@ jobs:
       - name: Build sdist and wheel
         run: |
           python -m build
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            SBOM.spdx.json
+            dist/*
+          generate_release_notes: true
 
       - name: Publish to PyPI
         if: ${{ secrets.PYPI_API_TOKEN != '' }}
